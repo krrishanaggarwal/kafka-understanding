@@ -4,6 +4,7 @@ A scalable, real-time food delivery tracking system built with Apache Kafka, dem
 
 ## System Architecture
 
+
 ```mermaid
 graph TD
     A[Rider GPS/Producer] -->|Location Updates| B[Kafka Topic: rider_location]
@@ -17,6 +18,9 @@ graph TD
     D --> G[Monitoring Service]
     D --> H[Notification Service]
     
+    D -->|Batch Writes| I[(Database)]
+    I -->|Reduced Load| J[100x Less DB Operations]
+    
     style A fill:#e74c3c,stroke:#2c3e50,stroke-width:2px,color:#fff,font-weight:bold
     style B fill:#3498db,stroke:#2c3e50,stroke-width:2px,color:#fff,font-weight:bold
     style C fill:#2ecc71,stroke:#2c3e50,stroke-width:2px,color:#fff,font-weight:bold
@@ -25,6 +29,8 @@ graph TD
     style F fill:#f1c40f,stroke:#2c3e50,stroke-width:2px,color:#2c3e50,font-weight:bold
     style G fill:#f1c40f,stroke:#2c3e50,stroke-width:2px,color:#2c3e50,font-weight:bold
     style H fill:#f1c40f,stroke:#2c3e50,stroke-width:2px,color:#2c3e50,font-weight:bold
+    style I fill:#34495e,stroke:#2c3e50,stroke-width:2px,color:#fff,font-weight:bold
+    style J fill:#16a085,stroke:#2c3e50,stroke-width:2px,color:#fff,font-weight:bold
     
     linkStyle default stroke:#2c3e50,stroke-width:2px
 ```

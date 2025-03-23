@@ -17,9 +17,9 @@ graph TD
     D --> G[Monitoring Service]
     D --> H[Notification Service]
     
-    style B fill:#f96,stroke:#333
-    style C fill:#9cf,stroke:#333
-    style D fill:#9f9,stroke:#333
+    style B fill:#ff9966,stroke:#333,stroke-width:2px
+    style C fill:#66ccff,stroke:#000000,stroke-width:2px
+    style D fill:#99ff99,stroke:#000000,stroke-width:2px
 ```
 
 ## System Components
